@@ -27,7 +27,7 @@ public class Spacejunk : MonoBehaviour
     void Update()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        Debug.Log(GameObject.FindObjectOfType<deploySpacejunk>().index);
+        //Debug.Log(GameObject.FindObjectOfType<deploySpacejunk>().index);
         if ((Mathf.Abs(player.transform.position.x) - Mathf.Abs(transform.position.x)) <= -10  || 
             (Mathf.Abs(player.transform.position.y) - Mathf.Abs(transform.position.y)) <= -10  ||
             (Mathf.Abs(player.transform.position.x) - Mathf.Abs(transform.position.x)) >= 10 ||
@@ -37,9 +37,7 @@ public class Spacejunk : MonoBehaviour
             GameObject.FindObjectOfType<deploySpacejunk>().index--;
         }
 
-        /*if (transform.position.x < screenBoundsTopRight.x * 2) {
-            Destroy(this.gameObject);
-        }*/
+        
     }
 
     private void OnCollisionEnter2D(Collision2D col) {
@@ -47,6 +45,8 @@ public class Spacejunk : MonoBehaviour
             Destroy(this.gameObject);
             this.gameObject.SetActive(false);
             GameObject.FindObjectOfType<deploySpacejunk>().index--;
+            GameObject.FindObjectOfType<PlayerScore>().score++;
+            Debug.Log(GameObject.FindObjectOfType<PlayerScore>().score);
         }
     }
 }
