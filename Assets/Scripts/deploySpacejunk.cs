@@ -8,6 +8,10 @@ public class deploySpacejunk : MonoBehaviour
     public GameObject player;
     public float respawnTime = 1.5f;
     private Vector2 screenBoundsTopRight, screenBoundsTopLeft, screenBoundsBottomLeft, screenBoundsBottomRight;
+    private GameObject[] extra = new GameObject[50];
+    public int maxJunk;
+    private int index;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,29 +24,49 @@ public class deploySpacejunk : MonoBehaviour
 
     private void spawnEnemy(GameObject player) {
         //top
-        for (int i = 0; i < 2; i++) {
-            float random = Random.Range(screenBoundsTopLeft.x, screenBoundsBottomRight.x);
-            GameObject a = Instantiate(spacejunkPrefab) as GameObject;
-            a.transform.position = new Vector2(random, screenBoundsTopLeft.y +1f );
+        if (index <=48) {
+            for (int i = 0; i < 2; i++) {
+                float random = Random.Range(screenBoundsTopLeft.x, screenBoundsBottomRight.x);
+                GameObject a = Instantiate(spacejunkPrefab) as GameObject;
+                a.transform.position = new Vector2(random, screenBoundsTopLeft.y + 1f);
+            //extra.SetValue(a, index);
+            index++;
+            }
         }
+            
         //bottom
-        for (int i = 0; i < 2; i++) {
-            float random = Random.Range(screenBoundsTopLeft.x, screenBoundsBottomRight.x);
-            GameObject a = Instantiate(spacejunkPrefab) as GameObject;
-            a.transform.position = new Vector2(random, screenBoundsBottomLeft.y - 1f);
+        if (index <= 48) {
+for (int i = 0; i < 2; i++) {
+                float random = Random.Range(screenBoundsTopLeft.x, screenBoundsBottomRight.x);
+                GameObject a = Instantiate(spacejunkPrefab) as GameObject;
+                a.transform.position = new Vector2(random, screenBoundsBottomLeft.y - 1f);
+            //extra.SetValue(a, index);
+            index++;
         }
+        }
+        
         //left
-        for (int i = 0; i < 2; i++) {
-            float random = Random.Range(screenBoundsTopLeft.y, screenBoundsBottomLeft.y);
-            GameObject a = Instantiate(spacejunkPrefab) as GameObject;
-            a.transform.position = new Vector2( screenBoundsTopLeft.x - 1f ,random);
+        if (index <= 48) {
+for (int i = 0; i < 2; i++) {
+                float random = Random.Range(screenBoundsTopLeft.y, screenBoundsBottomLeft.y);
+                GameObject a = Instantiate(spacejunkPrefab) as GameObject;
+                a.transform.position = new Vector2(screenBoundsTopLeft.x - 1f, random);
+            //extra.SetValue(a, index);
+            index++;
         }
+        }
+        
         //right
-        for (int i = 0; i < 2; i++) {
-            float random = Random.Range(screenBoundsTopLeft.y, screenBoundsBottomLeft.y);
-            GameObject a = Instantiate(spacejunkPrefab) as GameObject;
-            a.transform.position = new Vector2(screenBoundsTopRight.x + 1f, random);
+        if (index <= 48) {
+for (int i = 0; i < 2; i++) {
+                float random = Random.Range(screenBoundsTopLeft.y, screenBoundsBottomLeft.y);
+                GameObject a = Instantiate(spacejunkPrefab) as GameObject;
+                a.transform.position = new Vector2(screenBoundsTopRight.x + 1f, random);
+            //extra.SetValue(a, index);
+            index++;
         }
+        }
+        
     }
 
     IEnumerator spawnWave() {
@@ -55,9 +79,15 @@ public class deploySpacejunk : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         screenBoundsTopRight = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
         screenBoundsTopLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height, 0));
         screenBoundsBottomLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
         screenBoundsBottomRight = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, 0));
+        /*for (int i = 0; i < index; i++) {
+            if (Vector2.Distance(extra[i].transform.position, player.transform.position) >= 10) {
+                Destroy(extra[i]);
+            }
+        }*/
     }
 }
