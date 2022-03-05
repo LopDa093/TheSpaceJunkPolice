@@ -12,17 +12,20 @@ public class PlayerMovement : MonoBehaviour
     public bool inZeroGravityZone = false;
     private float origGravityScale = 0f;
     public string zeroGravTag = "";
+    private Vector2 screenBounds;
 
     // Start is called before the first frame update
     void Start()
     {
         rbody2d = GetComponent<Rigidbody2D>();
         origGravityScale = rbody2d.gravityScale;
+        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(screenBounds);
         moveForce = inZeroGravityZone ? zerogravMoveForce : normalMoveForce;
         rbody2d.gravityScale = inZeroGravityZone ? 0f : origGravityScale;
 
