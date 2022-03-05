@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(screenBounds);
+        
         moveForce = inZeroGravityZone ? zerogravMoveForce : normalMoveForce;
         rbody2d.gravityScale = inZeroGravityZone ? 0f : origGravityScale;
 
