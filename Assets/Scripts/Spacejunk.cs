@@ -5,10 +5,10 @@ using UnityEngine;
 public class Spacejunk : MonoBehaviour
 {
     public float speed = 0.0f;
-    public GameObject player;
+    public GameObject player, deploy;
     private Rigidbody2D rb;
     private Vector2 screenBoundsTopRight, screenBoundsTopLeft, screenBoundsBottomLeft, screenBoundsBottomRight;
-    public string Tag = "";
+    public string Tag = "Player";
     public SpriteRenderer rend;
     public Sprite[] sprites;
     
@@ -26,9 +26,15 @@ public class Spacejunk : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Vector2.Distance(transform.position, player.transform.position) >= 10) {
-            Destroy(this);
+        player = GameObject.FindGameObjectWithTag("Player");
+        Debug.Log(GameObject.FindObjectOfType<deploySpacejunk>().index);
+        if ((Mathf.Abs(player.transform.position.x) - Mathf.Abs(transform.position.x)) <= -10  || 
+            (Mathf.Abs(player.transform.position.y) - Mathf.Abs(transform.position.y)) <= -10  ||
+            (Mathf.Abs(player.transform.position.x) - Mathf.Abs(transform.position.x)) >= 10 ||
+            (Mathf.Abs(player.transform.position.y) - Mathf.Abs(transform.position.y)) >= 10) {
+            Destroy(this.gameObject);
+            this.gameObject.SetActive(false); 
+            GameObject.FindObjectOfType<deploySpacejunk>().index--;
         }
 
         /*if (transform.position.x < screenBoundsTopRight.x * 2) {
@@ -38,7 +44,9 @@ public class Spacejunk : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col) {
         if (col.gameObject.tag == Tag) {
-            
+            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
+            GameObject.FindObjectOfType<deploySpacejunk>().index--;
         }
     }
 }

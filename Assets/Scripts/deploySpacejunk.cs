@@ -10,15 +10,15 @@ public class deploySpacejunk : MonoBehaviour
     private Vector2 screenBoundsTopRight, screenBoundsTopLeft, screenBoundsBottomLeft, screenBoundsBottomRight;
     private GameObject[] extra = new GameObject[50];
     public int maxJunk;
-    private int index;
+    public int index;
 
     // Start is called before the first frame update
     void Start()
     {
-        screenBoundsTopRight = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
-        screenBoundsTopLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height, 0));
-        screenBoundsBottomLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
-        screenBoundsBottomRight = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, 0));
+        screenBoundsTopRight = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, -1));
+        screenBoundsTopLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height, -1));
+        screenBoundsBottomLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, -1));
+        screenBoundsBottomRight = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, -1));
         StartCoroutine(spawnWave());
     }
 
@@ -80,10 +80,10 @@ for (int i = 0; i < 2; i++) {
     void Update()
     {
         
-        screenBoundsTopRight = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
-        screenBoundsTopLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height, 0));
-        screenBoundsBottomLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
-        screenBoundsBottomRight = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, 0));
+        screenBoundsTopRight = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, -1));
+        screenBoundsTopLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height, -1));
+        screenBoundsBottomLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, -1));
+        screenBoundsBottomRight = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, -1));
         /*for (int i = 0; i < index; i++) {
             if (Vector2.Distance(extra[i].transform.position, player.transform.position) >= 10) {
                 Destroy(extra[i]);
