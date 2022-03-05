@@ -20,12 +20,6 @@ public class PlayerScore : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D col) {
-        if (col.gameObject.tag == Tag) {
-            Destroy(this.gameObject);
-            this.gameObject.SetActive(false);
-            GameObject.FindObjectOfType<deploySpacejunk>().index--;
-            GameObject.FindObjectOfType<PlayerScore>().score++;
-            Debug.Log(GameObject.FindObjectOfType<PlayerScore>().score);
-        }
+        
     }
 }
