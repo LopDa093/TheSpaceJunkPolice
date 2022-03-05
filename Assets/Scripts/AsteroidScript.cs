@@ -40,8 +40,7 @@ public class AsteroidScript : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Destroy(this.gameObject);
-            //add damage function plz, gracias
-            //player.
+            GameObject.FindObjectOfType<PlayerScore>().lives--;
         }    
     }
 }
