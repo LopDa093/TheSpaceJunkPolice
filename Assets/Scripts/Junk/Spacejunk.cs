@@ -49,6 +49,7 @@ public class Spacejunk : MonoBehaviour
             this.gameObject.SetActive(false);
             GameObject.FindObjectOfType<deploySpacejunk>().index--;
             GameObject.FindObjectOfType<PlayerScore>().score++;
+            print(GameObject.FindObjectOfType<PlayerScore>().score);
             Debug.Log(GameObject.FindObjectOfType<PlayerScore>().score);
         }
     }

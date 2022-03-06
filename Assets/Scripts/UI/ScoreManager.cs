@@ -23,7 +23,9 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        score = player.GetComponent<PlayerScore>().score;
+
+        score = GameObject.FindObjectOfType<PlayerScore>().score;
+        print(score);
         scoreText.text = score.ToString() + " POINTS";
     
     }

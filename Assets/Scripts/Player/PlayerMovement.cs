@@ -60,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
             if (collision.gameObject.tag == "enemy") {
+                Destroy(collision.gameObject);
                 changeAnim("Player_Hit_R");
                 new WaitForSecondsRealtime(1f);
                 /*anim.SetBool("hit",true);
@@ -69,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
             if (collision.gameObject.tag == "trash") {
+                Destroy(collision.gameObject);
                 changeAnim("Player_Net");
                 new WaitForSecondsRealtime(1f);
                 /*anim.SetBool("catch", true);
@@ -89,6 +91,7 @@ public class PlayerMovement : MonoBehaviour
             if (collision.gameObject.tag == "enemy") {
                 changeAnim("Player_Idle");
                 new WaitForSecondsRealtime(1f);
+                
                 /*anim.SetBool("hit", false);
                 new WaitForSeconds(0.5f);
                 anim.SetBool("hit", false);*/
