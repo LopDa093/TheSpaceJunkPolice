@@ -43,7 +43,7 @@ public class UFOScript : MonoBehaviour
     private void Enter()
     {
         transform.position = new Vector2(transform.position.x, transform.position.y - moveSpeed * Time.deltaTime);
-        if (transform.position.y < 3f)
+        if (transform.position.y < screenBoundsTopRight.y - 1)
         {
             enter = false;
             moveRight = true;
@@ -63,11 +63,11 @@ public class UFOScript : MonoBehaviour
 
         if (moveRight)
         {
-            transform.position = new Vector2(transform.position.x + moveSpeed * Time.deltaTime, transform.position.y);
+            transform.position = new Vector2(transform.position.x + moveSpeed * Time.deltaTime, screenBoundsTopRight.y-1);
         }
         else
         {
-            transform.position = new Vector2(transform.position.x - moveSpeed * Time.deltaTime, transform.position.y);
+            transform.position = new Vector2(transform.position.x - moveSpeed * Time.deltaTime, screenBoundsTopRight.y - 1);
         }
 
         timer -= Time.deltaTime;

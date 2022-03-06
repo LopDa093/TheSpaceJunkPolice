@@ -46,8 +46,9 @@ public class BulletScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Destroy(this.gameObject);
-            player.GetComponent<PlayerScore>().GetDamaged();
+            print("Player Hit");
+            FindObjectOfType<PlayerScore>().GetDamaged();
+            this.gameObject.transform.position = new Vector2(-999999,-9999999);
         }
     }
 

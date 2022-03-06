@@ -5,7 +5,7 @@ using UnityEngine;
 public class FireBullets : MonoBehaviour
 {
     [SerializeField]
-    private int bulletsAmount = 5;
+    private int bulletsAmount = 1;
 
     [SerializeField]
     private float startAngle = 90f, endAngle = 270f;

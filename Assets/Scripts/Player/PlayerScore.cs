@@ -17,7 +17,19 @@ public class PlayerScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (lives == 2) {
+            Destroy(HP3.gameObject);
+        }
+        if (lives == 1) {
+            Destroy(HP2.gameObject);
+            Canvas.SetActive(true);
+        }
+
+        if (lives == 0) {
+            Destroy(HP1.gameObject);
+            Time.timeScale = 0;
+
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D col) {
@@ -29,21 +41,6 @@ public class PlayerScore : MonoBehaviour
         
         lives--;
         Debug.Log("LIVES: " + lives);
-        if (lives == 2)
-        {
-            HP3.SetActive(false);
-        }
-        if (lives == 1)
-        {
-            HP2.SetActive(false);
-            Canvas.SetActive(true);
-        }
-
-        if (lives == 0)
-        {
-            HP1.SetActive(false);
-            Time.timeScale = 0;
-
-        }
+        
     }
 }

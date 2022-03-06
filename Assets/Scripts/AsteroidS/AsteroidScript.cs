@@ -30,7 +30,7 @@ public class AsteroidScript : MonoBehaviour
         GetComponent<Rigidbody2D>().AddForce(transform.forward * moveSpeed);
         rotZ += Time.deltaTime * rotSpeed;
         transform.rotation = Quaternion.Euler(0, 0, rotZ);
-        if (Vector2.Distance(transform.position, player.transform.position) > 10f)
+        if (Vector2.Distance(transform.position, player.transform.position) > 20f)
         {
             Destroy(this.gameObject);
         }
