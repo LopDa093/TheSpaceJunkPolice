@@ -7,6 +7,7 @@ public class UFOScript : MonoBehaviour
     private float moveSpeed, timer;
     private bool moveRight, enter, exit;
     private Vector2 screenBoundsTopRight, screenBoundsTopLeft;
+    public AudioSource sound;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,7 @@ public class UFOScript : MonoBehaviour
         screenBoundsTopRight = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
         screenBoundsTopLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height, 0));
         transform.position = new Vector2((screenBoundsTopRight.x + screenBoundsTopLeft.x)/2, screenBoundsTopRight.y +1f);
+        sound.Play();
     }
 
     // Update is called once per frame
@@ -83,7 +85,9 @@ public class UFOScript : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer < 0)
         {
+            sound.Stop();
             Destroy(this.gameObject);
+            
         }
     }
 }

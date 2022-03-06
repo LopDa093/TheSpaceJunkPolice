@@ -9,6 +9,7 @@ public class AsteroidScript : MonoBehaviour
     public Rigidbody2D RB;
     private float moveSpeed,rotSpeed, rotZ;
     private Vector2 dir;
+    public AudioSource sound;
 
     public SpriteRenderer rend;
     public Sprite[] sprites;
@@ -41,6 +42,7 @@ public class AsteroidScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            sound.Play();
             Destroy(this.gameObject);
             GameObject.FindObjectOfType<PlayerScore>().lives--;
             print("Lives :"+GameObject.FindObjectOfType<PlayerScore>().lives);

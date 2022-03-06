@@ -8,6 +8,7 @@ public class PlayerScore : MonoBehaviour
     public int score = 0;
     public int lives;
     public GameObject HP1, HP2, HP3, Canvas;
+    public AudioSource sound1, sound2;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,8 @@ public class PlayerScore : MonoBehaviour
 
         if (lives == 0) {
             Destroy(HP1.gameObject);
+            sound1.Stop();
+            sound2.Stop();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
         }

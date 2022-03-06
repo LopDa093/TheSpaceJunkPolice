@@ -8,7 +8,7 @@ public class Spacejunk : MonoBehaviour
     public GameObject player, deploy;
     private Rigidbody2D rb;
     private Vector2 screenBoundsTopRight, screenBoundsTopLeft, screenBoundsBottomLeft, screenBoundsBottomRight;
-    public AudioSource sound;
+    public AudioSource sound, sound1;
     public string Tag = "Player";
     public SpriteRenderer rend;
     public Sprite[] sprites;
@@ -44,6 +44,7 @@ public class Spacejunk : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D col) {
         if (col.gameObject.tag == Tag) {
             sound.Play();
+            sound1.Play();
             Destroy(this.gameObject);
             this.gameObject.SetActive(false);
             GameObject.FindObjectOfType<deploySpacejunk>().index--;

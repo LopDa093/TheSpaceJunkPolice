@@ -277,7 +277,7 @@ MonoBehaviour:
   jumpForce: 1800
   inZeroGravityZone: 1
   zeroGravTag: ZeroGrav
-  anim: {fileID: 0}
+  anim: {fileID: -3056147674486240179}
 --- !u!114 &7026254876402680994
 MonoBehaviour:
   m_ObjectHideFlags: 0
