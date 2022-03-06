@@ -6,6 +6,7 @@ public class BulletScript : MonoBehaviour
 {
     private Vector2 moveDirection;
     private float moveSpeed;
+    public GameObject player;
 
     private void OnEnable()
     {
@@ -46,7 +47,7 @@ public class BulletScript : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Destroy(this.gameObject);
-            GameObject.FindObjectOfType<PlayerScore>().lives--;
+            player.GetComponent<PlayerScore>().GetDamaged();
         }
     }
 
