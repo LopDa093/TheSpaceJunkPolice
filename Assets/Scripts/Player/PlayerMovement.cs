@@ -40,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
             float v = inZeroGravityZone ? Input.GetAxisRaw("Vertical") * moveForce : 0f;
 
             rbody2d.AddForce(new Vector2(h+0.01f, v+0.01f));
+            
         }
     }
 
