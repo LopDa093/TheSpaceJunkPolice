@@ -5,7 +5,7 @@ using UnityEngine;
 public class Background : MonoBehaviour
 {
     
-    public GameObject empty;
+    public GameObject star;
     public Sprite[] sprites;
     public float respawnTime = 1.5f;
     private Vector2 screenBoundsTopRight, 
@@ -36,8 +36,8 @@ public class Background : MonoBehaviour
     
             for (int i = 0; i < 2; i++) {
                 float random = Random.Range(screenBoundsTopLeft.x, screenBoundsBottomRight.x);
-                GameObject a = Instantiate(empty) as GameObject;
-            Debug.Log(a.GetComponent<SpriteRenderer>());
+                GameObject a = Instantiate(star) as GameObject;
+                Debug.Log(a.GetComponent<SpriteRenderer>());
                 a.GetComponent<SpriteRenderer>().sprite = sprites[Random.Range(0, sprites.Length - 1)];
                 a.transform.localScale = new Vector3(0.1f,0.1f,0.1f);
                 a.transform.position = new Vector2(random, screenBoundsTopLeft.y + 1f);
@@ -50,7 +50,7 @@ public class Background : MonoBehaviour
        
             for (int i = 0; i < 2; i++) {
                 float random = Random.Range(screenBoundsTopLeft.x, screenBoundsBottomRight.x);
-                GameObject a = Instantiate(empty) as GameObject;
+                GameObject a = Instantiate(star) as GameObject;
             a.GetComponent<SpriteRenderer>().sprite = sprites[Random.Range(0, sprites.Length - 1)];
             a.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
             a.transform.position = new Vector2(random, screenBoundsBottomLeft.y - 1f);
@@ -63,7 +63,7 @@ public class Background : MonoBehaviour
         
             for (int i = 0; i < 2; i++) {
                 float random = Random.Range(screenBoundsTopLeft.y, screenBoundsBottomLeft.y);
-                GameObject a = Instantiate(empty) as GameObject;
+                GameObject a = Instantiate(star) as GameObject;
                 a.GetComponent<SpriteRenderer>().sprite = sprites[Random.Range(0, sprites.Length - 1)];
             a.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
             a.transform.position = new Vector2(screenBoundsTopLeft.x - 1f, random);
@@ -76,7 +76,7 @@ public class Background : MonoBehaviour
     
             for (int i = 0; i < 2; i++) {
                 float random = Random.Range(screenBoundsTopLeft.y, screenBoundsBottomLeft.y);
-                GameObject a = Instantiate(empty) as GameObject;
+                GameObject a = Instantiate(star) as GameObject;
                 a.GetComponent<SpriteRenderer>().sprite = sprites[Random.Range(0, sprites.Length - 1)];
             a.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
             a.transform.position = new Vector2(screenBoundsTopRight.x + 1f, random);
