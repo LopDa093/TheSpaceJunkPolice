@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public bool inZeroGravityZone = false;
     private float origGravityScale = 0f;
     public string zeroGravTag = "";
+    public Animator anim;
     private Vector2 screenBounds;
 
     // Start is called before the first frame update
@@ -38,7 +39,12 @@ public class PlayerMovement : MonoBehaviour
         {
             float h = Input.GetAxisRaw("Horizontal") * moveForce;
             float v = inZeroGravityZone ? Input.GetAxisRaw("Vertical") * moveForce : 0f;
-
+            if (h<0) {
+                anim.SetBool("isLeft",true);
+            }
+            else {
+                anim.SetBool("isLeft", false);
+            }
             rbody2d.AddForce(new Vector2(h+0.01f, v+0.01f));
             
         }
@@ -49,6 +55,16 @@ public class PlayerMovement : MonoBehaviour
             if (col.gameObject.tag == zeroGravTag) {
                 inZeroGravityZone = true;
             }
+
+            if (col.gameObject.tag == "enemy") {
+                anim.SetBool("hit",true);
+                 new WaitForSeconds(1);
+            }
+
+            if (col.gameObject.tag == "trash") {
+                anim.SetBool("catch", true);
+                 new WaitForSeconds(1);
+            }
         }
     }
 
@@ -56,6 +72,16 @@ public class PlayerMovement : MonoBehaviour
         {
             if (col.gameObject.tag == zeroGravTag) {
                 inZeroGravityZone = false;
+            }
+
+            if (col.gameObject.tag == "enemy") {
+                anim.SetBool("hit", false);
+                new WaitForSeconds(1);
+            }
+
+            if (col.gameObject.tag == "trash") {
+                anim.SetBool("catch", false);
+                new WaitForSeconds(1);
             }
         }
     }
