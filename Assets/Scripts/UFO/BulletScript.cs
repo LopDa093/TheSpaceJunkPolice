@@ -46,7 +46,7 @@ public class BulletScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            print("Player Hit");
+            
             FindObjectOfType<PlayerScore>().GetDamaged();
             this.gameObject.transform.position = new Vector2(-999999,-9999999);
         }
