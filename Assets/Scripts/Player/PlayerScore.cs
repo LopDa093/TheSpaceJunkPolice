@@ -5,13 +5,13 @@ using UnityEngine;
 public class PlayerScore : MonoBehaviour
 {
     public int score = 0;
-    public int lives = 3;
+    public int lives;
     public GameObject HP1, HP2, HP3, Canvas;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        lives = 3;    
     }
 
     // Update is called once per frame
@@ -26,7 +26,9 @@ public class PlayerScore : MonoBehaviour
 
     public void GetDamaged()
     {
-        lives -= lives;
+        
+        lives--;
+        Debug.Log("LIVES: " + lives);
         if (lives == 2)
         {
             HP3.SetActive(false);

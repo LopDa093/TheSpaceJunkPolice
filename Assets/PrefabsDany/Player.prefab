@@ -273,6 +273,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   lives: 3
+  HP1: {fileID: 0}
+  HP2: {fileID: 0}
+  HP3: {fileID: 0}
+  Canvas: {fileID: 0}
 --- !u!1 &7026254876721001270
 GameObject:
   m_ObjectHideFlags: 0
