@@ -20,6 +20,10 @@ public class BulletScript : MonoBehaviour
     void Update()
     {
         transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
+
+        if (Vector2.Distance(transform.position, FindObjectOfType<PlayerMovement>().transform.position)>=30) {
+            Destroy(this.gameObject);
+        }
     }
 
     public void SetMoveDirection(Vector2 dir)

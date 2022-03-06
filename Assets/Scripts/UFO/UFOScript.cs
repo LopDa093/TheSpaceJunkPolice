@@ -16,7 +16,7 @@ public class UFOScript : MonoBehaviour
         moveRight = false;
         screenBoundsTopRight = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
         screenBoundsTopLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height, 0));
-        transform.position = new Vector2((screenBoundsTopRight.x + screenBoundsTopLeft.x)/2, screenBoundsTopRight.y +7f);
+        transform.position = new Vector2((screenBoundsTopRight.x + screenBoundsTopLeft.x)/2, screenBoundsTopRight.y +1f);
     }
 
     // Update is called once per frame

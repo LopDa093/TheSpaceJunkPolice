@@ -16,6 +16,7 @@ public class AsteroidScript : MonoBehaviour
     void Start()
     {
         rend.sprite = sprites[Random.Range(0, sprites.Length - 1)];
+        
         moveSpeed = 0.005f;
         rotSpeed = 20f;
         Vector2 dir = player.transform.position - transform.position;
@@ -41,6 +42,7 @@ public class AsteroidScript : MonoBehaviour
         {
             Destroy(this.gameObject);
             GameObject.FindObjectOfType<PlayerScore>().lives--;
+            print("Lives :"+GameObject.FindObjectOfType<PlayerScore>().lives);
         }    
     }
 }
