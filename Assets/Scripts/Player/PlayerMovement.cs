@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public string zeroGravTag = "";
     public Animator anim;
     private Vector2 screenBounds;
+    private string currentState;
 
     // Start is called before the first frame update
     void Start()
@@ -40,10 +41,12 @@ public class PlayerMovement : MonoBehaviour
             float h = Input.GetAxisRaw("Horizontal") * moveForce;
             float v = inZeroGravityZone ? Input.GetAxisRaw("Vertical") * moveForce : 0f;
             if (h<0) {
-                anim.SetBool("isLeft",true);
+                changeAnim("Player_Idle");
+                //anim.SetBool("isLeft",true);
             }
             else {
-                anim.SetBool("isLeft", false);
+                changeAnim("Player_Idle");
+                //anim.SetBool("isLeft", false);
             }
             rbody2d.AddForce(new Vector2(h+0.01f, v+0.01f));
             
@@ -57,15 +60,21 @@ public class PlayerMovement : MonoBehaviour
             }
 
             if (collision.gameObject.tag == "enemy") {
-                anim.SetBool("hit",true);
-               
-                
+                changeAnim("Player_Hit_R");
+                new WaitForSecondsRealtime(1f);
+                /*anim.SetBool("hit",true);
+                new WaitForSeconds(0.5f);
+                anim.SetBool("hit", true);
+                */
             }
 
             if (collision.gameObject.tag == "trash") {
-                anim.SetBool("catch", true);
-               
-                
+                changeAnim("Player_Net");
+                new WaitForSecondsRealtime(1f);
+                /*anim.SetBool("catch", true);
+                new WaitForSeconds(0.5f);
+                anim.SetBool("catch", true);*/
+
             }
         }
     }
@@ -78,14 +87,31 @@ public class PlayerMovement : MonoBehaviour
             }
 
             if (collision.gameObject.tag == "enemy") {
-                anim.SetBool("hit", false);
+                changeAnim("Player_Idle");
+                new WaitForSecondsRealtime(1f);
+                /*anim.SetBool("hit", false);
+                new WaitForSeconds(0.5f);
+                anim.SetBool("hit", false);*/
             }
 
             if (collision.gameObject.tag == "trash") {
-                anim.SetBool("catch", false);
+                changeAnim("Player_Idle");
+                new WaitForSecondsRealtime(1f);
+                /*anim.SetBool("catch", false);
+                new WaitForSeconds(0.5f);
+                anim.SetBool("catch", false);*/
             }
         }
 
         
+    }
+
+    void changeAnim(string newState) {
+        if (currentState == newState) {
+            return;
+        }
+
+        anim.Play(newState);
+        currentState = newState;
     }
 }

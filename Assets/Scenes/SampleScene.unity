@@ -1527,7 +1527,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4249141498237584158, guid: d335be6622480e748ba81cfcbb444a0c, type: 3}
       propertyPath: timer
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5067392517129416446, guid: d335be6622480e748ba81cfcbb444a0c, type: 3}
       propertyPath: m_Size.x
@@ -1758,7 +1758,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 060c27bfb62495749ba4f63c5665a40a, type: 3}
   - {fileID: 21300000, guid: 6f632d0ba70ea19468d0fca06ab9866a, type: 3}
   - {fileID: 21300000, guid: 70f62ae11188dcf45a11374a5d1bbbac, type: 3}
-  respawnTime: 1.5
+  respawnTime: 2
 --- !u!114 &7026254876828633939
 MonoBehaviour:
   m_ObjectHideFlags: 0
