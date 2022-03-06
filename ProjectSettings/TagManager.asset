@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - ZeroGrav
+  - enemy
+  - trash
   layers:
   - Default
   - TransparentFX

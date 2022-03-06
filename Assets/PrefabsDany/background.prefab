@@ -96,3 +96,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 7026254876402681003, guid: d335be6622480e748ba81cfcbb444a0c, type: 3}
+  junk: {fileID: 5437542583769568169, guid: a448526a74b02ac40b3f3d11dfcb3f0b, type: 3}
+  asteroid: {fileID: 1078899429957206312, guid: cd98e9d6daa427d4cad7beebbe263e00, type: 3}

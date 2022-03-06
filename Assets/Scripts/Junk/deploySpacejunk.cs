@@ -24,7 +24,7 @@ public class deploySpacejunk : MonoBehaviour
 
     private void spawnEnemy(GameObject player) {
         //top
-        if (index <=48) {
+        if (index <=20) {
             for (int i = 0; i < 2; i++) {
                 float random = Random.Range(screenBoundsTopLeft.x, screenBoundsBottomRight.x);
                 GameObject a = Instantiate(spacejunkPrefab) as GameObject;
@@ -35,7 +35,7 @@ public class deploySpacejunk : MonoBehaviour
         }
             
         //bottom
-        if (index <= 48) {
+        if (index <= 20) {
 for (int i = 0; i < 2; i++) {
                 float random = Random.Range(screenBoundsTopLeft.x, screenBoundsBottomRight.x);
                 GameObject a = Instantiate(spacejunkPrefab) as GameObject;
@@ -46,7 +46,7 @@ for (int i = 0; i < 2; i++) {
         }
         
         //left
-        if (index <= 48) {
+        if (index <= 20) {
 for (int i = 0; i < 2; i++) {
                 float random = Random.Range(screenBoundsTopLeft.y, screenBoundsBottomLeft.y);
                 GameObject a = Instantiate(spacejunkPrefab) as GameObject;
@@ -57,7 +57,7 @@ for (int i = 0; i < 2; i++) {
         }
         
         //right
-        if (index <= 48) {
+        if (index <= 20) {
 for (int i = 0; i < 2; i++) {
                 float random = Random.Range(screenBoundsTopLeft.y, screenBoundsBottomLeft.y);
                 GameObject a = Instantiate(spacejunkPrefab) as GameObject;

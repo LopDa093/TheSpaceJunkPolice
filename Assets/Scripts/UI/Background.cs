@@ -34,7 +34,7 @@ public class Background : MonoBehaviour
     private void spawnEnemy() {
         
     
-            for (int i = 0; i < 2; i++) {
+            for (int i = 0; i < 1; i++) {
                 float random = Random.Range(screenBoundsTopLeft.x, screenBoundsBottomRight.x);
                 GameObject a = Instantiate(star) as GameObject;
                 Debug.Log(a.GetComponent<SpriteRenderer>());
@@ -48,7 +48,7 @@ public class Background : MonoBehaviour
 
         //bottom
        
-            for (int i = 0; i < 2; i++) {
+            for (int i = 0; i < 1; i++) {
                 float random = Random.Range(screenBoundsTopLeft.x, screenBoundsBottomRight.x);
                 GameObject a = Instantiate(star) as GameObject;
             a.GetComponent<SpriteRenderer>().sprite = sprites[Random.Range(0, sprites.Length - 1)];
@@ -61,7 +61,7 @@ public class Background : MonoBehaviour
 
         //left
         
-            for (int i = 0; i < 2; i++) {
+            for (int i = 0; i < 1; i++) {
                 float random = Random.Range(screenBoundsTopLeft.y, screenBoundsBottomLeft.y);
                 GameObject a = Instantiate(star) as GameObject;
                 a.GetComponent<SpriteRenderer>().sprite = sprites[Random.Range(0, sprites.Length - 1)];
@@ -74,7 +74,7 @@ public class Background : MonoBehaviour
 
         //right
     
-            for (int i = 0; i < 2; i++) {
+            for (int i = 0; i < 1; i++) {
                 float random = Random.Range(screenBoundsTopLeft.y, screenBoundsBottomLeft.y);
                 GameObject a = Instantiate(star) as GameObject;
                 a.GetComponent<SpriteRenderer>().sprite = sprites[Random.Range(0, sprites.Length - 1)];

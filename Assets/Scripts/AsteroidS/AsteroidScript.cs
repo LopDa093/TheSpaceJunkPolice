@@ -27,6 +27,7 @@ public class AsteroidScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         GetComponent<Rigidbody2D>().AddForce(transform.forward * moveSpeed);
         rotZ += Time.deltaTime * rotSpeed;
         transform.rotation = Quaternion.Euler(0, 0, rotZ);
