@@ -50,39 +50,42 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D col) {
+    private void OnCollisionEnter2D(Collision2D collision) {
         {
-            if (col.gameObject.tag == zeroGravTag) {
+            if (collision.gameObject.tag == zeroGravTag) {
                 inZeroGravityZone = true;
             }
 
-            if (col.gameObject.tag == "enemy") {
+            if (collision.gameObject.tag == "enemy") {
                 anim.SetBool("hit",true);
-                 new WaitForSeconds(1);
+               
+                
             }
 
-            if (col.gameObject.tag == "trash") {
+            if (collision.gameObject.tag == "trash") {
                 anim.SetBool("catch", true);
-                 new WaitForSeconds(1);
+               
+                
             }
         }
     }
 
-    private void OnTriggerExit2D(Collider2D col) {
+    private void OnCollisionExit2D(Collision2D collision) {
         {
-            if (col.gameObject.tag == zeroGravTag) {
+            print(collision);
+            if (collision.gameObject.tag == zeroGravTag) {
                 inZeroGravityZone = false;
             }
 
-            if (col.gameObject.tag == "enemy") {
+            if (collision.gameObject.tag == "enemy") {
                 anim.SetBool("hit", false);
-                new WaitForSeconds(1);
             }
 
-            if (col.gameObject.tag == "trash") {
+            if (collision.gameObject.tag == "trash") {
                 anim.SetBool("catch", false);
-                new WaitForSeconds(1);
             }
         }
+
+        
     }
 }
