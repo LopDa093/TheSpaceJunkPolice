@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScore : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class PlayerScore : MonoBehaviour
 
         if (lives == 0) {
             Destroy(HP1.gameObject);
-            Time.timeScale = 0;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
         }
     }
