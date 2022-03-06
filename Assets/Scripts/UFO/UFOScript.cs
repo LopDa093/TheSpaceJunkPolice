@@ -22,6 +22,8 @@ public class UFOScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        screenBoundsTopRight = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
+        screenBoundsTopLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height, 0));
         if (enter)
         {
             Enter();

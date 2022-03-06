@@ -11,6 +11,7 @@ public class UFOSpawner : MonoBehaviour
     void Start()
     {
         CD = timer;
+        StartCoroutine(spawnWave());
     }
 
     // Update is called once per frame
@@ -29,6 +30,7 @@ public class UFOSpawner : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(CD);
+            print("SpawnUFO");
             SpawnUFO();
         }
     }

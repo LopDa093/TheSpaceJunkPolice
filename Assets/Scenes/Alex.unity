@@ -497,7 +497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9538e1a74d29b4d8f6ac06ded1b8af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 20
+  timer: 5
   UFO: {fileID: 2725959390840701887, guid: 1a0cea72a443a36489f3af524d8ff633, type: 3}
 --- !u!4 &1603047564
 Transform:

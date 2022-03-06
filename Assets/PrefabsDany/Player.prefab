@@ -285,6 +285,7 @@ GameObject:
   - component: {fileID: 7026254876721001269}
   - component: {fileID: 7026254876721001271}
   - component: {fileID: 7026254876721001268}
+  - component: {fileID: 4249141498237584158}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -374,3 +375,17 @@ MonoBehaviour:
   respawnTime: 1.5
   maxJunk: 50
   index: 0
+--- !u!114 &4249141498237584158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7026254876721001270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b9538e1a74d29b4d8f6ac06ded1b8af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 5
+  UFO: {fileID: 2725959390840701887, guid: 1a0cea72a443a36489f3af524d8ff633, type: 3}
