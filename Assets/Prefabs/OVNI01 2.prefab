@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c532ddb8832eab4693d3b7aa20d9cde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sound: {fileID: 0}
 --- !u!114 &5531056330603139122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,9 +110,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be7777845414da94c8294c1c6bd75d0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletsAmount: 1
-  startAngle: 180
-  endAngle: 180
+  bulletsAmount: 5
+  startAngle: 120
+  endAngle: 240
 --- !u!70 &3621644137002732033
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
